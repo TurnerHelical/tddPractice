@@ -1,0 +1,27 @@
+{
+  "name": "tddpractice",
+  "version": "1.0.0",
+  "description": "A project for practicing Test Driven Development",
+  "main": "capitalize.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TurnerHelical/tddPractice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TurnerHelical/tddPractice/issues"
+  },
+  "homepage": "https://github.com/TurnerHelical/tddPractice#readme",
+  "devDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "babel-jest": "^30.0.2",
+    "jest": "^30.0.2",
+    "node": "^20.19.3"
+  }
+}
