@@ -67,4 +67,16 @@ class calculator {
         ));
     };
 }
-export { capitilize, reverseString, calculator };
+
+class ceasarCipher {
+    shift = (string, factor) => {
+        let letterUnicode = string.charCodeAt(0);
+        letterUnicode += factor;
+        let shiftedChar = String.fromCharCode(letterUnicode);
+        let finalLetter = shiftedChar.toUpperCase();
+        return finalLetter;
+
+    }
+    
+}
+export { capitilize, reverseString, calculator, ceasarCipher};

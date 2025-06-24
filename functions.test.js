@@ -1,7 +1,8 @@
 import { describe } from 'node:test';
-import {capitilize, reverseString, calculator} from './functions'
+import {capitilize, reverseString, calculator, ceasarCipher} from './functions'
 
 const calc = new calculator();
+const ciph = new ceasarCipher();
 
 describe('capitilize function', () => {
     test('should capitilize the first letter', () => {
@@ -74,5 +75,14 @@ describe('basic calculator function', () => {
 
     test('non integer should return an error', () => {
         expect(calc.divide('this is a test string')).toBe('must be an integer');
+    });
+});
+
+describe('Caesar Cipher function', () => {
+    test('shift a letter by the factor and capitilize it', () => {
+        expect(ciph.shift('a',1)).toBe('B');
+    });
+    test('shift a letter by a different factor and capitilize it', () => {
+        expect(ciph.shift('a',4)).toBe('E');
     });
 });
