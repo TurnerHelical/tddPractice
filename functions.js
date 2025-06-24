@@ -36,17 +36,35 @@ class calculator {
     if (numbers.length === 0) return 0;
 
     for (let num of numbers) {
-        if (typeof num !== 'number' || Number.isNaN(num)) {
-            return 'must be an integer';
-        }
+      if (typeof num !== "number" || Number.isNaN(num)) {
+        return "must be an integer";
+      }
     }
 
     let total = numbers[0];
     for (let i = 1; i < numbers.length; i++) {
-        total -= numbers[i];
+      total -= numbers[i];
     }
 
     return total;
-};
+  };
+
+  multiply = (...numbers) => {
+    if (!numbers.every((num) => typeof num === "number")) {
+      return "must be an integer";
+    } else
+      return (total = numbers.reduce(
+        (total, currentNumber) => total * currentNumber
+      ));
+  };
+
+  divide = (...numbers) => {
+    if (!numbers.every((num) => typeof num === "number")) {
+        return "must be an integer";
+      } else
+        return (total = numbers.reduce(
+          (total, currentNumber) => total / currentNumber
+        ));
+    };
 }
 export { capitilize, reverseString, calculator };

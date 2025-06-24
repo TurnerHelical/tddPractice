@@ -51,4 +51,28 @@ describe('basic calculator function', () => {
     test('returns an error if not a number', () => {
         expect((calc.subtract('test string'))).toBe('must be an integer')
     });
+
+    test('should multiply 2 numbers', () => {
+        expect((calc.multiply(2,2))).toBe(4);
+    });
+
+    test('should multiply multiple numbers', () => {
+        expect((calc.multiply(2,2,2))).toBe(8);
+    });
+
+    test('non integer should return error', () => {
+        expect(calc.multiply('this is a test string')).toBe('must be an integer');
+    });
+
+    test('should divide 2 number', () => {
+        expect(calc.divide(4,2)).toBe(2); 
+        });
+
+    test('should divide by multiple numbers', () => {
+        expect(calc.divide(6,2,2)).toBe(1.5);
+    });
+
+    test('non integer should return an error', () => {
+        expect(calc.divide('this is a test string')).toBe('must be an integer');
+    });
 });
