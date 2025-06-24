@@ -1,8 +1,9 @@
 import { describe } from 'node:test';
-import {capitilize, reverseString, calculator, ceasarCipher} from './functions'
+import {capitilize, reverseString, calculator, ceasarCipher, AnalyzeArray} from './functions'
 
 const calc = new calculator();
 const ciph = new ceasarCipher();
+const analyze = new AnalyzeArray();
 
 describe('capitilize function', () => {
     test('should capitilize the first letter', () => {
@@ -99,3 +100,9 @@ describe('Caesar Cipher function', () => {
     })
     
 });
+
+describe('Analyze Array Function', () => {
+    test('Should return an object', () => {
+        expect(analyze.returnObject([1,2,3,4])).toEqual({});
+    }) 
+})

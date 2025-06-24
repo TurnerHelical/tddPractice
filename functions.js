@@ -95,4 +95,12 @@ class ceasarCipher {
     }
     
 }
-export { capitilize, reverseString, calculator, ceasarCipher};
+
+class AnalyzeArray{
+
+    returnObject = (array) => {
+        const result = {};
+        return result
+    }
+}
+export { capitilize, reverseString, calculator, ceasarCipher, AnalyzeArray};
