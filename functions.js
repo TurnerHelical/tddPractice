@@ -70,11 +70,29 @@ class calculator {
 
 class ceasarCipher {
     shift = (string, factor) => {
-        let letterUnicode = string.charCodeAt(0);
-        letterUnicode += factor;
-        let shiftedChar = String.fromCharCode(letterUnicode);
-        let finalLetter = shiftedChar.toUpperCase();
-        return finalLetter;
+        let stringArray = string.split(''); 
+        let newArray = [];
+        for (letter of stringArray) {
+            if (letter === ' ') {
+                newArray.push(' ');
+            } else {
+                let letterUnicode = letter.charCodeAt(0);
+                    if (letterUnicode >= 97 && letterUnicode <= 122) {
+                        letterUnicode += factor;
+                        letterUnicode -= 32;
+                        let shiftedChar = String.fromCharCode(letterUnicode);
+                        newArray.push(shiftedChar);
+                    } else {
+                        letterUnicode += factor;
+                        letterUnicode += 32;
+                        let shiftedChar = String.fromCharCode(letterUnicode);
+                        newArray.push(shiftedChar);
+                }
+                
+            }
+        }
+        let cipherString = newArray.join('');
+        return cipherString;
 
     }
     

@@ -85,4 +85,13 @@ describe('Caesar Cipher function', () => {
     test('shift a letter by a different factor and capitilize it', () => {
         expect(ciph.shift('a',4)).toBe('E');
     });
+
+    test('should shift a sentence', () => {
+        expect(ciph.shift('test sentence', 1)).toBe('UFTU TFOUFODF');
+    });
+
+    test('should shift letters and change case', () => {
+        expect(ciph.shift('aAfF',1)).toBe('BbGg');
+    });
+    
 });
