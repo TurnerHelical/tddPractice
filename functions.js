@@ -72,22 +72,20 @@ class ceasarCipher {
     shift = (string, factor) => {
         let stringArray = string.split(''); 
         let newArray = [];
-        for (letter of stringArray) {
-            if (letter === ' ') {
+        for (let char of stringArray) {
+            if (char === ' ') {
                 newArray.push(' ');
             } else {
-                let letterUnicode = letter.charCodeAt(0);
+                let letterUnicode = char.charCodeAt(0);
                     if (letterUnicode >= 97 && letterUnicode <= 122) {
-                        letterUnicode += factor;
-                        letterUnicode -= 32;
-                        let shiftedChar = String.fromCharCode(letterUnicode);
-                        newArray.push(shiftedChar);
+                        let shiftedChar = (((letterUnicode - 97 + factor) % 26) + 65);
+                        newArray.push(String.fromCharCode(shiftedChar));
+                    } else if (letterUnicode >= 65 && letterUnicode <= 90) {
+                        let shiftedChar = (((letterUnicode - 65 + factor) % 26) + 97);
+                        newArray.push(String.fromCharCode(shiftedChar));
                     } else {
-                        letterUnicode += factor;
-                        letterUnicode += 32;
-                        let shiftedChar = String.fromCharCode(letterUnicode);
-                        newArray.push(shiftedChar);
-                }
+                        newArray.push(char);
+                    }
                 
             }
         }

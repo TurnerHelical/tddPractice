@@ -93,5 +93,9 @@ describe('Caesar Cipher function', () => {
     test('should shift letters and change case', () => {
         expect(ciph.shift('aAfF',1)).toBe('BbGg');
     });
+
+    test('should wrap around to beginning of alphabet when reaching the end of the alphabet', () => {
+        expect(ciph.shift('Z',3)).toBe('c');
+    })
     
 });
