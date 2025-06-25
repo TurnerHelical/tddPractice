@@ -102,7 +102,8 @@ describe('Caesar Cipher function', () => {
 });
 
 describe('Analyze Array Function', () => {
-    test('Should return an object', () => {
-        expect(analyze.returnObject([1,2,3,4])).toEqual({});
-    }) 
+    
+    test('should return an object with a value that averages the numbers in the array', () => {
+        expect(analyze.returnObject([1,2,3,4])).toEqual({average: 2.5});
+    })
 })

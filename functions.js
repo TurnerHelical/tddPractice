@@ -99,8 +99,18 @@ class ceasarCipher {
 class AnalyzeArray{
 
     returnObject = (array) => {
-        const result = {};
+        const result = new Object();
+        let average = this.averageArray(array);
+        result.average = average;
+
         return result
+    }
+
+    averageArray = (array) => {
+       let average = array.reduce((total, currentNumber) => {
+        return total + currentNumber
+      },0);
+      return average / array.length
     }
 }
 export { capitilize, reverseString, calculator, ceasarCipher, AnalyzeArray};
