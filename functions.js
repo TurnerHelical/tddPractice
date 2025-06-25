@@ -101,8 +101,13 @@ class AnalyzeArray{
     returnObject = (array) => {
         const result = new Object();
         let average = this.averageArray(array);
+        let min = this.lowestNumber(array);
+        let max = this.highestNumber(array);
+        let length = this.arrayLength(array);
         result.average = average;
-
+        result.min = min;
+        result.max = max;
+        result.length = length;
         return result
     }
 
@@ -111,6 +116,20 @@ class AnalyzeArray{
         return total + currentNumber
       },0);
       return average / array.length
+    }
+
+    lowestNumber = (array) => {
+      let min = Math.min(...array);
+      return min
+    }
+
+    highestNumber = (array) => {
+      let max = Math.max(...array);
+      return max;
+    }
+
+    arrayLength = (array) => {
+      return array.length;
     }
 }
 export { capitilize, reverseString, calculator, ceasarCipher, AnalyzeArray};
